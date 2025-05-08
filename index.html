@@ -22,7 +22,7 @@
     }
 
     .main-background .container {
-      background-color: rgba(0, 0, 0, 0.9); /* Even darker overlay */
+      background-color: rgba(0, 0, 0, 0.9);
       border-radius: 12px;
       padding: 2rem;
     }
@@ -43,7 +43,6 @@
       border-radius: 4px;
     }
 
-    /* QR Modal Styles */
     .modal-content {
       background-color: #1e1e1e;
       border: 2px solid #ffc107;
@@ -54,6 +53,11 @@
     @keyframes fadeIn {
       from { opacity: 0; transform: scale(0.9); }
       to { opacity: 1; transform: scale(1); }
+    }
+
+    .icon-white img {
+      filter: invert(100%);
+      margin-right: 8px;
     }
   </style>
 </head>
@@ -90,7 +94,7 @@
       <div class="row mt-5">
         <div class="col-md-6">
           <h3>📩 Contact Information</h3>
-          <ul class="list-unstyled">
+          <ul class="list-unstyled icon-white">
             <li><img src="https://img.icons8.com/ios-filled/16/email-open.png"> syedmuhammadhuzaifa2000@gmail.com</li>
             <li><img src="https://img.icons8.com/ios-filled/16/email-open.png"> huzaifa@automators.com.pk</li>
             <li><img src="https://img.icons8.com/ios-filled/16/phone.png"> +92 332 1304560</li>
@@ -116,7 +120,7 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content text-center p-3">
         <h5 class="text-warning">Habib-Metro QR</h5>
-        <img src="images/qr-habib.jpg" alt="Habib QR" class="img-fluid">
+        <img src="images/qr-metro.jpg" alt="Habib QR" class="img-fluid">
       </div>
     </div>
   </div>

@@ -22,7 +22,7 @@
     }
 
     .main-background .container {
-      background-color: rgba(0, 0, 0, 1); /* Darker gradient overlay */
+      background-color: rgba(0, 0, 0, 0.9); /* Even darker overlay */
       border-radius: 12px;
       padding: 2rem;
     }
@@ -41,6 +41,19 @@
       color: #ffc107;
       padding: 2px 5px;
       border-radius: 4px;
+    }
+
+    /* QR Modal Styles */
+    .modal-content {
+      background-color: #1e1e1e;
+      border: 2px solid #ffc107;
+      border-radius: 10px;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
     }
   </style>
 </head>
@@ -78,22 +91,50 @@
         <div class="col-md-6">
           <h3>📩 Contact Information</h3>
           <ul class="list-unstyled">
-            <li><img src="https://img.icons8.com/ios-filled/16/000000/email-open.png"> syedmuhammadhuzaifa2000@gmail.com</li>
-            <li><img src="https://img.icons8.com/ios-filled/16/000000/email-open.png"> huzaifa@automators.com.pk</li>
-            <li><img src="https://img.icons8.com/ios-filled/16/000000/phone.png"> +92 332 1304560</li>
-            <li><img src="https://img.icons8.com/ios-filled/16/000000/identification-documents.png"> 42201-*******-*</li>
-            <li><img src="https://img.icons8.com/ios-filled/16/000000/address.png"> Aligarh Muslim University Oldboys C.H.S Sector 9A-1, Karachi, Pakistan</li>
+            <li><img src="https://img.icons8.com/ios-filled/16/email-open.png"> syedmuhammadhuzaifa2000@gmail.com</li>
+            <li><img src="https://img.icons8.com/ios-filled/16/email-open.png"> huzaifa@automators.com.pk</li>
+            <li><img src="https://img.icons8.com/ios-filled/16/phone.png"> +92 332 1304560</li>
+            <li><img src="https://img.icons8.com/ios-filled/16/identification-documents.png"> 42201-*******-*</li>
+            <li><img src="https://img.icons8.com/ios-filled/16/address.png"> Aligarh Muslim University Oldboys C.H.S Sector 9A-1, Karachi, Pakistan</li>
           </ul>
         </div>
 
         <div class="col-md-6">
           <h3>💳 Bank Details</h3>
           <ul class="list-unstyled">
-            <li>Habib-Metro: <code>PK45MPBL*****</code></li>
-            <li>Faysal: <code>PK22FAYS*****</code></li>
-            <li>Easy Paisa: <code>PK85TMFB*****</code></li>
+            <li><a href="#qrModal1" data-bs-toggle="modal">Habib-Metro: <code>PK45MPBL*****</code></a></li>
+            <li><a href="#qrModal2" data-bs-toggle="modal">Faysal: <code>PK22FAYS*****</code></a></li>
+            <li><a href="#qrModal3" data-bs-toggle="modal">Easy Paisa: <code>PK85TMFB*****</code></a></li>
           </ul>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- QR Modals -->
+  <div class="modal fade" id="qrModal1" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-center p-3">
+        <h5 class="text-warning">Habib-Metro QR</h5>
+        <img src="images/qr-habib.jpg" alt="Habib QR" class="img-fluid">
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="qrModal2" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-center p-3">
+        <h5 class="text-warning">Faysal QR</h5>
+        <img src="images/qr-faysal.jpg" alt="Faysal QR" class="img-fluid">
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="qrModal3" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-center p-3">
+        <h5 class="text-warning">Easy Paisa QR</h5>
+        <img src="images/qr-easypaisa.jpg" alt="Easy Paisa QR" class="img-fluid">
       </div>
     </div>
   </div>

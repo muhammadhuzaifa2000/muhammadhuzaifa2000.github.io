@@ -10,12 +10,28 @@
     }
     .modal-img {
       max-width: 100%;
+      border-radius: 8px;
+      border: 3px solid #007bff;
+      animation: fadeInZoom 0.6s ease-in-out;
+    }
+    @keyframes fadeInZoom {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    .modal-content {
+      background-color: #f8f9fa;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
     }
   </style>
 </head>
 <body class="d-flex flex-column min-vh-100">
-
-  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
       <a class="navbar-brand" href="index.html">Muhammad Huzaifa</a>
@@ -35,7 +51,6 @@
     </div>
   </nav>
 
-  <!-- Main Content -->
   <div class="container py-5">
     <div class="text-center">
       <h1 class="display-4">Welcome to My Portfolio</h1>
@@ -66,26 +81,26 @@
   </div>
 
   <!-- QR Modals -->
-  <div class="modal fade" id="qrMetro" tabindex="-1" aria-labelledby="qrMetroLabel" aria-hidden="true">
+  <div class="modal fade" id="qrMetro" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Habib-Metro QR</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <h5 class="modal-title">Habib-Metro QR – Syed Muhammad Huzaifa & Aisha Khan – 0477</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body text-center">
-          <img src="images/qr-metro.jpg" alt="Habib-Metro QR" class="modal-img">
+          <img src="images/qr-metro.jpg" alt="Metro QR" class="modal-img">
         </div>
       </div>
     </div>
   </div>
 
-  <div class="modal fade" id="qrFaysal" tabindex="-1" aria-labelledby="qrFaysalLabel" aria-hidden="true">
+  <div class="modal fade" id="qrFaysal" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Faysal Bank QR</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <h5 class="modal-title">Faysal Bank QR – Syed Muhammad Huzaifa – 2857</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body text-center">
           <img src="images/qr-faysal.jpg" alt="Faysal QR" class="modal-img">
@@ -94,21 +109,20 @@
     </div>
   </div>
 
-  <div class="modal fade" id="qrEasypaisa" tabindex="-1" aria-labelledby="qrEasypaisaLabel" aria-hidden="true">
+  <div class="modal fade" id="qrEasypaisa" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Easy Paisa QR</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <h5 class="modal-title">Easy Paisa QR – Syed Muhammad Huzaifa – MSISDN: *****4560</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body text-center">
-          <img src="images/qr-easypaisa.jpg" alt="Easy Paisa QR" class="modal-img">
+          <img src="images/qr-easypaisa.jpg" alt="Easypaisa QR" class="modal-img">
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Footer -->
   <footer class="bg-dark text-light text-center py-3 mt-auto">
     <small>&copy; 2025 Syed Muhammad Huzaifa – All rights reserved.</small>
   </footer>

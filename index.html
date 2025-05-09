@@ -1,3 +1,7 @@
+from bs4 import BeautifulSoup
+
+# Base HTML template (mobile-optimized version of index.html)
+html_template = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,68 +15,60 @@
       background-attachment: scroll;
       background-size: cover;
     }
-
     .bank-details li {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
     }
-
     .modal-img {
       max-width: 100%;
     }
-
     .content-container {
-      background-color: rgba(153, 153, 153, 0.9);
+      background-color: rgba(255, 255, 255, 0.9);
       padding: 2rem;
       border-radius: 10px;
     }
-
     .modal-content {
       animation: zoomIn 0.3s ease-in-out;
     }
-
     @keyframes zoomIn {
-      from {
-        opacity: 0;
-        transform: scale(0.9);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
     }
-
     .bank-details a:hover {
       text-decoration: underline;
       color: #0d6efd;
     }
-
     @media (max-width: 576px) {
       .content-container {
         padding: 1rem;
+        text-align: center;
       }
-
       .content-container h1 {
-        font-size: 1.5rem;
+        font-size: 1.75rem;
+        font-weight: bold;
       }
-
       .content-container h3 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin-top: 2rem;
+      }
+      .content-container li,
+      .content-container p,
+      .lead {
+        font-size: 1.15rem;
+        line-height: 1.6;
+        word-break: break-word;
+        justify-content: center;
+      }
+      .bank-details li {
         font-size: 1.2rem;
       }
-
-      .content-container li {
-        font-size: 1rem;
-        word-break: break-word;
-      }
-
-      .lead {
-        font-size: 1rem;
-        line-height: 1.4;
+      .d-flex.align-items-center {
+        justify-content: center;
       }
     }
   </style>
 </head>
 <body class="d-flex flex-column min-vh-100">
-  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
       <a class="navbar-brand" href="index.html">Welcome</a>
@@ -81,14 +77,17 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Main Content -->
   <div class="container py-5">
     <div class="content-container">
       <div class="text-center">
@@ -97,39 +96,18 @@
       </div>
 
       <div class="row mt-5">
-        <!-- Contact Info -->
-        <div class="col-md-6">
+        <div class="col-md-6 text-md-start text-center">
           <h3>📬 Contact Information</h3>
           <ul class="list-unstyled">
-            <li class="d-flex align-items-center gap-2">
-              <img src="https://img.icons8.com/ios-filled/16/000000/email-open.png" alt="Email Icon" />
-              syedmuhammadhuzaifa2000@gmail.com
-            </li>
-            <li class="d-flex align-items-center gap-2">
-              <img src="https://img.icons8.com/ios-filled/16/000000/email-open.png" alt="Email Icon" />
-              huzaifa@automators.com.pk
-            </li>
-            <li class="d-flex align-items-center gap-2">
-              <img src="https://img.icons8.com/ios-filled/16/000000/phone.png" alt="Phone Icon" />
-              +92 332 1304560
-            </li>
-            <li class="d-flex align-items-center gap-2">
-              <img src="https://img.icons8.com/ios-filled/16/000000/identification-documents.png" alt="CNIC Icon" />
-              CNIC: 42201-1960891-1
-            </li>
-            <li class="d-flex align-items-center gap-2">
-              <img src="https://img.icons8.com/ios-filled/16/000000/address.png" alt="Address Icon" />
-              Delivery Address: 124/1, Defence Phase 6, Karachi, Pakistan
-            </li>
+            <li><img src="https://img.icons8.com/ios-filled/16/000000/email-open.png" alt="Email Icon"> syedmuhammadhuzaifa2000@gmail.com</li>
+            <li><img src="https://img.icons8.com/ios-filled/16/000000/email-open.png" alt="Email Icon"> huzaifa@automators.com.pk</li>
+            <li><img src="https://img.icons8.com/ios-filled/16/000000/phone.png" alt="Phone Icon"> +92 332 1304560</li>
+            <li><img src="https://img.icons8.com/ios-filled/16/000000/identification-documents.png" alt="CNIC Icon"> CNIC: 42201-1960891-1</li>
+            <li><img src="https://img.icons8.com/ios-filled/16/000000/address.png" alt="Address Icon"> Delivery Address: 124/1, Defence Phase 6, Karachi, Pakistan</li>
           </ul>
         </div>
-
-        <!-- Bank Info -->
-        <div class="col-md-6">
-          <h3 class="d-flex align-items-center gap-2">
-            <img src="images/card-icon.png" alt="Card Icon" width="24" />
-            Bank Details
-          </h3>
+        <div class="col-md-6 text-md-start text-center">
+          <h3><img src="images/card-icon.png" alt="Card Icon" width="24"> Bank Details</h3>
           <ul class="list-unstyled bank-details">
             <li>Habib-Metro: <a href="#qrHabib" data-bs-toggle="modal">PK45MPBL*****</a></li>
             <li>Faysal: <a href="#qrFaysal" data-bs-toggle="modal">PK22FAYS*****</a></li>
@@ -140,50 +118,6 @@
     </div>
   </div>
 
-  <!-- QR Modals -->
-  <div class="modal fade" id="qrHabib" tabindex="-1" aria-labelledby="qrHabibLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Scan to Pay – Habib Metro</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body text-center">
-          <img src="images/qr-metro.jpg" alt="QR Code" class="modal-img" />
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal fade" id="qrFaysal" tabindex="-1" aria-labelledby="qrFaysalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Scan to Pay – Faysal</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body text-center">
-          <img src="images/qr-faysal.jpg" alt="QR Code" class="modal-img" />
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal fade" id="qrEasypaisa" tabindex="-1" aria-labelledby="qrEasypaisaLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Scan to Pay – Easy Paisa</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body text-center">
-          <img src="images/qr-easypaisa.jpg" alt="QR Code" class="modal-img" />
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Footer -->
   <footer class="bg-dark text-light text-center py-3 mt-auto">
     <small>&copy; 2025 Syed Muhammad Huzaifa – All rights reserved.</small>
   </footer>
@@ -191,3 +125,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+"""
+
+# Prepare the output
+from IPython.display import display, HTML
+display(HTML(html_template))

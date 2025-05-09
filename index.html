@@ -1,4 +1,3 @@
-<!-- ======================= index.html ======================= -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,11 +6,20 @@
   <title>Syed Muhammad Huzaifa – Home</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
+    body {
+      background: url('images/background.jpeg') no-repeat center center fixed;
+      background-size: cover;
+    }
     .bank-details li {
       font-size: 1.1rem;
     }
     .modal-img {
       max-width: 100%;
+    }
+    .content-container {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 2rem;
+      border-radius: 10px;
     }
   </style>
 </head>
@@ -38,43 +46,71 @@
 
   <!-- Main Content -->
   <div class="container py-5">
-    <div class="text-center">
-      <h1 class="display-4">Welcome to My Portfolio</h1>
-      <p class="lead">I'm Syed Muhammad Huzaifa, an Industrial Electronics Engineer with a passion for Automation & Content Creation.</p>
-    </div>
-
-    <div class="row mt-5">
-      <div class="col-md-6">
-        <h3>📬 Contact Information</h3>
-        <ul class="list-unstyled">
-          <li><img src="https://img.icons8.com/ios-filled/16/000000/email-open.png" alt="Email Icon"> syedmuhammadhuzaifa2000@gmail.com</li>
-          <li><img src="https://img.icons8.com/ios-filled/16/000000/email-open.png" alt="Email Icon"> huzaifa@automators.com.pk</li>
-          <li><img src="https://img.icons8.com/ios-filled/16/000000/phone.png" alt="Phone Icon"> +92 332 1304560</li>
-          <li><img src="https://img.icons8.com/ios-filled/16/000000/identification-documents.png" alt="CNIC Icon"> CNIC: 42201-1960891-1</li>
-          <li><img src="https://img.icons8.com/ios-filled/16/000000/address.png" alt="Address Icon"> Delivery Address: 124/1, Defence Phase 6, Karachi, Pakistan</li>
-        </ul>
+    <div class="content-container">
+      <div class="text-center">
+        <h1 class="display-4">Welcome to My Portfolio</h1>
+        <p class="lead">I'm Syed Muhammad Huzaifa, an Industrial Electronics Engineer with a passion for Automation & Content Creation.</p>
       </div>
-      <div class="col-md-6">
-        <h3><img src="https://img.icons8.com/color/24/credit-card.png" alt="Card Icon"> Bank Details</h3>
-        <ul class="list-unstyled bank-details">
-          <li>Habib-Metro: <a href="#qrModal" data-bs-toggle="modal">PK45MPBL*****</a></li>
-          <li>Faysal: <a href="#qrModal" data-bs-toggle="modal">PK22FAYS*****</a></li>
-          <li>Easy Paisa: <a href="#qrModal" data-bs-toggle="modal">PK85TMFB*****</a></li>
-        </ul>
+
+      <div class="row mt-5">
+        <div class="col-md-6">
+          <h3>📬 Contact Information</h3>
+          <ul class="list-unstyled">
+            <li><img src="https://img.icons8.com/ios-filled/16/000000/email-open.png" alt="Email Icon"> syedmuhammadhuzaifa2000@gmail.com</li>
+            <li><img src="https://img.icons8.com/ios-filled/16/000000/email-open.png" alt="Email Icon"> huzaifa@automators.com.pk</li>
+            <li><img src="https://img.icons8.com/ios-filled/16/000000/phone.png" alt="Phone Icon"> +92 332 1304560</li>
+            <li><img src="https://img.icons8.com/ios-filled/16/000000/identification-documents.png" alt="CNIC Icon"> CNIC: 42201-1960891-1</li>
+            <li><img src="https://img.icons8.com/ios-filled/16/000000/address.png" alt="Address Icon"> Delivery Address: 124/1, Defence Phase 6, Karachi, Pakistan</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <h3><img src="images/card-icon.png" alt="Card Icon" width="24"> Bank Details</h3>
+          <ul class="list-unstyled bank-details">
+            <li>Habib-Metro: <a href="#qrHabib" data-bs-toggle="modal">PK45MPBL*****</a></li>
+            <li>Faysal: <a href="#qrFaysal" data-bs-toggle="modal">PK22FAYS*****</a></li>
+            <li>Easy Paisa: <a href="#qrEasypaisa" data-bs-toggle="modal">PK85TMFB*****</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- QR Modal -->
-  <div class="modal fade" id="qrModal" tabindex="-1" aria-labelledby="qrModalLabel" aria-hidden="true">
+  <!-- QR Modals -->
+  <div class="modal fade" id="qrHabib" tabindex="-1" aria-labelledby="qrHabibLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="qrModalLabel">Scan to Pay</h5>
+          <h5 class="modal-title" id="qrHabibLabel">Scan to Pay – Habib Metro</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body text-center">
-          <img src="images/qr-code.jpg" alt="QR Code" class="modal-img">
+          <img src="images/habib-qr.jpg" alt="QR Code" class="modal-img">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="qrFaysal" tabindex="-1" aria-labelledby="qrFaysalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="qrFaysalLabel">Scan to Pay – Faysal</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <img src="images/faysal-qr.jpg" alt="QR Code" class="modal-img">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="qrEasypaisa" tabindex="-1" aria-labelledby="qrEasypaisaLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="qrEasypaisaLabel">Scan to Pay – Easy Paisa</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <img src="images/easypaisa-qr.jpg" alt="QR Code" class="modal-img">
         </div>
       </div>
     </div>
